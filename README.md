@@ -31,7 +31,7 @@ A persistência dos dados é feita em banco de dados em memória.
 
 # Documentation Swagger
 URL: http://localhost:8080/swagger-ui/?urls.primaryName=Vers%C3%A3o%20API%202 <br>
-Foi realizada duas versão da API, V1 e V2.
+Foram realizadas duas versões da API, V1 e V2.
 
 # Métodos da API
 GET 		/pautas/v2 			listar <br>
@@ -79,4 +79,3 @@ Handler de erros padronizado.
 # TODO
 - Testes de performance <br>
 - Testas toda a API, devido ao tempo não implementei todos os testes que eu gostaria. <br>
-- Cadama service
