@@ -65,24 +65,5 @@ class PautaControllerTest {
 					.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk());
 	}
-	
-	@Test
-	void deveDar200AoVotar() throws Exception {
-		URI uri = new URI("/pautas/v2/1/votar");
-
-		String json = 
-				"{"
-				+ "  \"tipo\": \"NAO\","
-				+ "  \"usuarioId\": \"00257186069\""
-				+ "}";
-
-		mockMvc
-			.perform(
-					MockMvcRequestBuilders
-					.post(uri)
-					.content(json)
-					.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().is(200));
-	}
 
 }
