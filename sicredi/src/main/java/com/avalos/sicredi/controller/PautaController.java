@@ -114,13 +114,11 @@ public class PautaController {
 	@PostMapping("/v2/{id}/votar")
 	@Transactional
 	public ResponseEntity<VotoDto> votar(@PathVariable Long id, @RequestBody @Valid VotoForm votoForm) {
-		validationService.validaUsuario(votoForm.getUsuarioId());
-
 		Pauta pauta = pautaRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(PAUTA_NAO_ENCONTRADA + id));
 
 		validationService.validaSessao(pauta);
-
 		validationService.validaUsuarioVotou(pauta, votoForm.getUsuarioId());
+		validationService.validaUsuario(votoForm.getUsuarioId());
 
 		return ResponseEntity.ok(new VotoDto(votoRepository.save(votoForm.converterToModel(pauta))));
 	}
