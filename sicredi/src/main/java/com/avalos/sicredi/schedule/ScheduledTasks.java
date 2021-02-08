@@ -31,7 +31,8 @@ public class ScheduledTasks {
 	public void verificaPautas() {
 		List<Pauta> pautas = pautaRepository.findByStatus(StatusPauta.OPENED);
 
-		for (Pauta pauta : pautas) {
+		pautas.forEach(pauta -> {
+			// TODO[] implementar camada
 			if (pauta.getDtFechamento().isBefore(LocalDateTime.now())) {
 				pauta.setStatus(StatusPauta.CLOSED);
 				pautaRepository.save(pauta);
@@ -44,7 +45,7 @@ public class ScheduledTasks {
 
 				activeMQPublisher.publicarMensagem(messageDto.toJSON());
 			}
-		}
+		});
 	}
 
 }

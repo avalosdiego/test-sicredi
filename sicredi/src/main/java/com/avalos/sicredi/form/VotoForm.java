@@ -31,7 +31,7 @@ public class VotoForm {
 		this.tipo = tipo;
 	}
 
-	public Voto converter(Pauta pauta) {
+	public Voto converterToModel(Pauta pauta) {
 		return new Voto(pauta, usuarioId, tipo);
 	}
 

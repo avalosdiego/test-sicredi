@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import com.avalos.sicredi.model.Pauta;
-import com.avalos.sicredi.repository.PautaRepository;
 
 public class PautaForm {
 
@@ -36,13 +35,11 @@ public class PautaForm {
 		this.descricao = descricao;
 	}
 
-	public Pauta converter() {
+	public Pauta converterToModel() {
 		return new Pauta(titulo, descricao);
 	}
 
-	public Pauta atualizar(Long id, PautaRepository pautaRepository) {
-		Pauta pauta = pautaRepository.getOne(id);
-
+	public Pauta atualizarModel(Pauta pauta) {
 		pauta.setTitulo(this.titulo);
 		pauta.setDescricao(this.descricao);
 

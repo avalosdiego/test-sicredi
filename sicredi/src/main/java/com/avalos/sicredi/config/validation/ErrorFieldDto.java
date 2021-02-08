@@ -1,11 +1,11 @@
 package com.avalos.sicredi.config.validation;
 
-public class ErrorFormDto {
+public class ErrorFieldDto {
 
 	private String field;
 	private String error;
 
-	public ErrorFormDto(String field, String error) {
+	public ErrorFieldDto(String field, String error) {
 		this.field = field;
 		this.error = error;
 	}
