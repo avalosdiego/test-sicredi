@@ -34,13 +34,13 @@ URL: http://localhost:8080/swagger-ui/?urls.primaryName=Vers%C3%A3o%20API%202 <b
 Foi realizada duas versão da API, V1 e V2.
 
 # Métodos da API
-GET 		/pautas/v2 									listar
-POST		/pautas/v2 									cadastrar
-GET 		/pautas/v2/{id} 						detalhar
-PUT 		/pautas/v2/{id} 						atualizar
-DELETE 	/pautas/v2/{id} 						remover
-PUT 		/pautas/v2/{id}/abrirSessao abrirSessao
-POST 		/pautas/v2/{id}/votar 			votar
+GET 		/pautas/v2 			listar <br>
+POST		/pautas/v2 			cadastrar <br>
+GET 		/pautas/v2/{id} 		detalhar <br>
+PUT 		/pautas/v2/{id} 		atualizar <br>
+DELETE 	/pautas/v2/{id} 			remover <br>
+PUT 		/pautas/v2/{id}/abrirSessao 	abrirSessao <br>
+POST 		/pautas/v2/{id}/votar 		votar
 
 # Mensageria ActiveMQ
 Assim que uma sessão é fechada pelo scheduler, uma mensagem é enviada para o ActiveMQ. <br>
@@ -78,4 +78,5 @@ Handler de erros padronizado.
 
 # TODO
 - Testes de performance <br>
-- Mais teste
+- Testas toda a API, devido ao tempo não implementei todos os testes que eu gostaria. <br>
+- Cadama service
