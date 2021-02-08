@@ -1,6 +1,5 @@
 package com.avalos.sicredi.controller;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -45,19 +44,9 @@ class PautaControllerTest {
 
 	}
 
-	@Test
-	void case2__detalhaPauta() throws Exception {
-		URI uri = new URI("/pautas/v2/1");
-
-		mockMvc.perform(
-				get(uri)
-					.contentType(MediaType.APPLICATION_JSON))
-					.andExpect(status().isOk())
-				.andExpect(jsonPath("$.titulo").value("Teste Controller"));
-	}
 
 	@Test
-	void case3__abreSessao() throws Exception {
+	void case2__abreSessao() throws Exception {
 		URI uri = new URI("/pautas/v2/1/abrirSessao");
 
 		mockMvc.perform(
